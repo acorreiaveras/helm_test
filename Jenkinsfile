@@ -1,11 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
         script {
-          sh 'echo ${env.USERNAME}'
-          sh 'echo ${env.PASSWORD}'
+          sh 'echo $env.USERNAME'
+          sh 'echo $env.PASSWORD'
         }
 
       }
