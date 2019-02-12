@@ -4,8 +4,8 @@ pipeline {
     stage('error') {
       steps {
         script {
-          sh 'echo ${USERNAME}'
-          sh 'echo ${PASSWORD}'
+          MY_USERNAME='echo $USERNAME'
+          print MY_USERNAME
         }
 
       }
