@@ -4,8 +4,8 @@ pipeline {
     stage('error') {
       steps {
         script {
-          MY_USERNAME= sh'echo $USERNAME'
-          print MY_USERNAME
+          sh'echo $smartcheck-username'
+          sh'echo $credentials(smartcheck-username)'
         }
 
       }
