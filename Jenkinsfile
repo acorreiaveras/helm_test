@@ -1,10 +1,16 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('print credentials') {
       steps {
         script {
-          sh'echo $env:smartcheck-username'
+
+          withCredentials([usernamePassword(credentialsId: 'smartcheck-credentials',
+          usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+            sh 'echo $PASSWORD'
+            echo "${env.USERNAME}"
+          }
+
         }
 
       }
